@@ -62,5 +62,15 @@ class RelatedJSON {
         }
     }
 
-    load() {}
+    load() {
+        if (!this.connectPathInfo.to) {
+            console.error("path not found");
+        }
+
+        const main = fs.readFileSync(this.connectPathInfo.to, "utf-8");
+        const data = JSON.parse(main);
+
+        this.models = typeof data.models === 'object' && data.models !== null ? data.models : {};
+        this.relations = Array.isArray(data.relations) ? data.relations : [];
+    }
 }
