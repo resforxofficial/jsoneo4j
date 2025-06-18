@@ -75,4 +75,4 @@ class RelatedJSON {
     }
 }
 
-export default RelatedJSON;
+export { RelatedJSON, WantTo }; 
