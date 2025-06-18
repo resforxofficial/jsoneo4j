@@ -74,3 +74,5 @@ class RelatedJSON {
         this.relations = Array.isArray(data.relations) ? data.relations : [];
     }
 }
+
+export default RelatedJSON;
